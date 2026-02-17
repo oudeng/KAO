@@ -1,0 +1,10 @@
+{
+  "niterations": 400,
+  "population_size": 48,
+  "timeout_in_seconds": 60,
+  "maxsize": 20,
+  "maxdepth": 10,
+  "parsimony": 0.0032,
+  "unary_operators": ["sqrt", "exp", "log"],
+  "binary_operators": ["+", "-", "*", "/"]
+}

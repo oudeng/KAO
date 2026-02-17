@@ -1,0 +1,36 @@
+name: kao310
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy[version='>=1.21.0']
+  - scipy[version='>=1.7.0']
+  - pandas[version='>=1.3.0']
+  - scikit-learn[version='>=1.0.0']
+  - matplotlib[version='>=3.4.0']
+  - seaborn[version='>=0.11.0']
+  - deap[version='>=1.3.1']
+  - shap[version='>=0.40.0']
+  - sympy[version='>=1.9']
+  - pyyaml[version='>=6.0']
+  - tqdm[version='>=4.60']
+  - pytest[version='>=7.0']
+  - swig[version='>=4.0.0']
+  - julia[version='>=1.6.0']
+  - cmake[version='>=3.18']
+  - pybind11[version='>=2.11.0']
+  - gcc_linux-64
+  - gxx_linux-64
+  - glmnet
+  - git
+  - jupyterlab
+  - ipython
+  - pip
+  - pip:
+      - kneed==0.8.5
+      - pysr==1.5.9
+      - gplearn>=0.4
+      - pyoperon==0.4.0
+      # rils-rols requires --no-build-isolation, install separately after env creation
+      # See README_env.md Step 2b

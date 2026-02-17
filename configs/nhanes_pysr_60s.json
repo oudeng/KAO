@@ -1,0 +1,8 @@
+{
+  "niterations": 480,
+  "population_size": 42,
+  "timeout_in_seconds": 60,
+  "maxsize": 20,
+  "maxdepth": 10,
+  "parsimony": 0.0032
+}

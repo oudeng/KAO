@@ -1,0 +1,44 @@
+# Byte-compiled / optimised / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Results (generated at runtime)
+results/
+
+# Logs (keep directory, ignore contents except .gitkeep)
+logs/*
+!logs/.gitkeep
+
+# Backup files
+*.bak
+
+# Claude settings
+.claude/
+
+# OS metadata
+.DS_Store
+Thumbs.db

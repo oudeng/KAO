@@ -1,0 +1,17 @@
+numpy>=1.21
+pandas>=1.3
+scikit-learn>=1.0
+scipy>=1.7
+matplotlib>=3.5
+seaborn>=0.11
+sympy>=1.9
+deap>=1.3
+pysr>=0.11
+gplearn>=0.4
+pyyaml>=6.0
+tqdm>=4.60
+pytest>=7.0
+kneed>=0.8
+# Operon C++ baseline (requires C++ toolchain; install separately if build fails)
+# NOTE: pyoperon 0.5.0 has a regression bug (R²<0 on trivial tasks); use 0.4.0
+pyoperon==0.4.0

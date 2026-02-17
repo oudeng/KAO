@@ -1,0 +1,7 @@
+{
+  "generations": 84,
+  "mu": 2000,
+  "lambda": 2000,
+  "enable_linear_scaling": true,
+  "max_tree_depth": 11
+}

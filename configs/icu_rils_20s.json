@@ -1,0 +1,6 @@
+{
+  "max_time": 20,
+  "max_fit_calls": 20000,
+  "max_complexity": 30,
+  "complexity_penalty": 0.001
+}
