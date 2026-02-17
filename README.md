@@ -279,14 +279,11 @@ symbolic length, and produces expressions 4–5× shorter than RILS-ROLS.
 If you use KAO in your research, please cite:
 
 ```bibtex
-@article{deng2025kao,
-  title   = {Parsimonious Symbolic Regression via Typed Quadratic
-             Operators and Knee-Point Selection},
-  author  = {Deng, Ou and Nishimura, Takuichi and Ogihara, Atsushi
-             and Jin, Beihong},
-  journal = {Scientific Reports},
-  year    = {2025},
-  note    = {Under review}
+@article{deng2026kao,
+  title   = {KAO: Auditability-Oriented Symbolic Regression via Typed Quadratic Operators and Knee-Point Selection under Strict Time and Complexity Budgets},
+  author  = {Deng, Ou and Nishimura, Shouji and Ogihara, Atsushi and Jin, Qun},
+  journal = {arXiv},
+  year    = {2026}
 }
 ```
 
