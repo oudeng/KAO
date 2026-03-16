@@ -755,7 +755,7 @@ def plot_convergence_curves(
     ax.set_xlabel("Runtime (s)")
     ax.set_ylabel("R² (test)")
     display = DATASET_DISPLAY.get(dataset, dataset)
-    ax.set_title(f"Convergence — {display}",
+    ax.set_title(f"Runtime vs. Final Test R² — {display}",
                  fontsize=14, fontweight='bold')
     ax.grid(alpha=0.25)
 
