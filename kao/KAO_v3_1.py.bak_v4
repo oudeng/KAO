@@ -847,11 +847,6 @@ def run_single(X_train: np.ndarray, y_train: np.ndarray,
         **extra_config,
     )
 
-    # v4 fix: propagate seed → cv_seed so model-selection CV folds
-    # match the convention in run_kao.py (seed_hparams['cv_seed'] = seed)
-    if "cv_seed" not in config:
-        config["cv_seed"] = seed
-
     # Instantiate and run
     t0 = time.perf_counter()
     core = KAO_Core(feature_names, X_train, y_train, **config)

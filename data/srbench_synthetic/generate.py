@@ -3,13 +3,26 @@
 """
 SRBench Standard Synthetic Benchmarks
 ======================================
-Five benchmark functions spanning distinct structural families:
+Ten benchmark functions selected via stratified coverage rule
+(see KAO/analysis/generate_srbench_task_descriptors.py for selection details):
 
-  Nguyen-1          polynomial          x0^3 + x0^2 + x0
-  Nguyen-7          transcendental      log(x0+1) + log(x0^2+1)
-  Keijzer-6         discrete sum        sum(1/i, i=1..x)
-  Vladislavleva-4   rational multivar   10/(5+sum((xi-3)^2, i=0..4))
-  Korns-12          trig high-dim       2 - 2.1*cos(9.8*x0)*sin(1.3*x4)
+  --- Original 5 ---
+  Nguyen-1          polynomial 1D       x0^3 + x0^2 + x0
+  Nguyen-7          transcendental 1D   log(x0+1) + log(x0^2+1)
+  Keijzer-6         discrete sum 1D     sum(1/i, i=1..x)
+  Vladislavleva-4   rational 5D         10/(5+sum((xi-3)^2, i=0..4))
+  Korns-12          trig 5D             2 - 2.1*cos(9.8*x0)*sin(1.3*x4)
+
+  --- Added 5 (stratified coverage extension) ---
+  Vladislavleva-1   exp+rational 2D     exp(-(x0-1)^2) / (1.2+(x1-2.5)^2)
+  Nguyen-9          trig 2D             sin(x0) + sin(x1^2)
+  Nguyen-10         trig 2D             2*sin(x0)*cos(x1)
+  Keijzer-4         exp+trig 1D         x0^3*exp(-x0)*cos(x0)*sin(x0)*(sin(x0)^2*cos(x0)-1)
+  Pagie-1           rational 2D         1/(1+x0^-4) + 1/(1+x1^-4)
+
+Selection criteria (all satisfied):
+  poly >= 2, rational >= 2, trig/exp_log >= 2, multivar(n_vars>=2) >= 2,
+  high_dim(n_vars>=5) >= 1, 4 benchmark families represented.
 
 Each benchmark is defined as a SRBenchmark dataclass with:
   - ground truth expression (for symbolic recovery check)
@@ -79,6 +92,58 @@ BENCHMARKS = {
         n_vars=5,
         domain=(-50, 50),
         n_train=10000,
+        n_test=10000,
+    ),
+    # ──────────────────────────────────────────────────────────
+    # Phase 6A additions: 5 new benchmarks (stratified coverage)
+    # Refs: Nguyen (2011), Keijzer (2003), Vladislavleva (2009),
+    #        Pagie & Hogeweg (1997)
+    # ──────────────────────────────────────────────────────────
+    "vladislavleva_1": SRBenchmark(
+        name="Vladislavleva-1",
+        fn=lambda X: np.exp(-(X[:, 0] - 1) ** 2) / (1.2 + (X[:, 1] - 2.5) ** 2),
+        ground_truth="exp(-(x0-1)**2) / (1.2 + (x1-2.5)**2)",
+        n_vars=2,
+        domain=(0.3, 4.0),
+        n_train=100,
+        n_test=221,
+    ),
+    "nguyen_9": SRBenchmark(
+        name="Nguyen-9",
+        fn=lambda X: np.sin(X[:, 0]) + np.sin(X[:, 1] ** 2),
+        ground_truth="sin(x0) + sin(x1**2)",
+        n_vars=2,
+        domain=(0, 1),
+    ),
+    "nguyen_10": SRBenchmark(
+        name="Nguyen-10",
+        fn=lambda X: 2.0 * np.sin(X[:, 0]) * np.cos(X[:, 1]),
+        ground_truth="2*sin(x0)*cos(x1)",
+        n_vars=2,
+        domain=(0, 1),
+    ),
+    "keijzer_4": SRBenchmark(
+        name="Keijzer-4",
+        fn=lambda X: (
+            X[:, 0] ** 3
+            * np.exp(-X[:, 0])
+            * np.cos(X[:, 0])
+            * np.sin(X[:, 0])
+            * (np.sin(X[:, 0]) ** 2 * np.cos(X[:, 0]) - 1)
+        ),
+        ground_truth="x0**3*exp(-x0)*cos(x0)*sin(x0)*(sin(x0)**2*cos(x0)-1)",
+        n_vars=1,
+        domain=(0, 10),
+        n_train=200,
+        n_test=200,
+    ),
+    "pagie_1": SRBenchmark(
+        name="Pagie-1",
+        fn=lambda X: 1.0 / (1.0 + X[:, 0] ** (-4)) + 1.0 / (1.0 + X[:, 1] ** (-4)),
+        ground_truth="1/(1+x0**(-4)) + 1/(1+x1**(-4))",
+        n_vars=2,
+        domain=(-5, 5),
+        n_train=676,
         n_test=10000,
     ),
 }

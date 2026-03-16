@@ -1,0 +1,45 @@
+{
+  "_comment": "Complexity-matched tuning grid for Phase 3 (Experiment A). Target: expressions with ≤8 nodes to match KAO's NSGA-II knee-point regime.",
+  "PySR": {
+    "grid": {
+      "maxsize": [8, 10, 12],
+      "parsimony": [0.01, 0.03, 0.1, 0.3]
+    },
+    "fixed": {
+      "niterations": 40,
+      "population_size": 33,
+      "maxdepth": 10,
+      "timeout_in_seconds": 60
+    }
+  },
+  "RILS-ROLS": {
+    "grid": {
+      "max_complexity": [8, 10, 12],
+      "complexity_penalty": [0.001, 0.01, 0.05]
+    },
+    "fixed": {
+      "max_fit_calls": 100000,
+      "sample_size": 1.0
+    }
+  },
+  "gplearn": {
+    "grid": {
+      "parsimony_coefficient": [0.001, 0.01, 0.05, 0.1],
+      "max_depth": [3, 4, 5]
+    },
+    "fixed": {}
+  },
+  "Operon": {
+    "_strategy": "direct_max_length_constraint",
+    "_note": "pyoperon 0.4 SymbolicRegressor supports max_length and max_depth directly",
+    "grid": {
+      "max_length": [8, 10, 12],
+      "max_depth": [4, 5, 6]
+    },
+    "fixed": {
+      "population_size": 1000,
+      "generations": 1000,
+      "max_evaluations": 1000000
+    }
+  }
+}
