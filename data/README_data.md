@@ -7,7 +7,7 @@
 - **File**: `mimic_iv/ICU_composite_risk_score.csv` (2939 rows × 20 features + target)
 - **Target**: `composite_risk_score`
 - **Extraction script**: `mimic_iv/mimic_extract_v7.py` (requires credentialed PhysioNet access)
-- **Preprocessed CSV included**: Yes (no raw data access needed for reproduction)
+- **Preprocessed CSV included**: Not provide by PhysioNet data use agreements
 
 ### NHANES 2021–2023
 - **Source**: https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/default.aspx?Cycle=2021-2023
@@ -22,7 +22,7 @@
 - **Target**: `composite_risk_score`
 - **Extraction script**: `eicu/eicu_extract_v2_1.py` (requires credentialed PhysioNet access)
 - **Preprocessing**: `eicu/preprocess.py`
-- **Preprocessed CSV included**: Yes
+- **Preprocessed CSV included**: Not provide by PhysioNet data use agreements
 
 ## UCI Benchmark Datasets
 
@@ -40,11 +40,5 @@ Nguyen-1, Nguyen-7, Keijzer-6, Vladislavleva-4, Korns-12.
 
 ## Ethics Statement
 
-This study used deidentified clinical data from the MIMIC-IV and eICU
-databases, accessed through PhysioNet under credentialed access approval.
-The responsible investigator completed the CITI Program "Data or Specimens
-Only Research" training (Completion Record ID: 68986283, valid April 11,
-2025 to April 11, 2029) and signed the required data use agreement. No
-additional ethics approval was required as the study involved analysis of
-deidentified publicly available data. NHANES data are publicly available
-from the CDC.
+This study used deidentified clinical data from the MIMIC-IV and eICU databases, accessed through PhysioNet under credentialed access approval.
+The responsible investigator completed the CITI Program "Data or Specimens Only Research" training (Completion Record ID: 68986283, valid April 11, 2025 to April 11, 2029) and signed the required data use agreement. No additional ethics approval was required as the study involved analysis of deidentified publicly available data. NHANES data are publicly available from the CDC.
