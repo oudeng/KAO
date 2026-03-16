@@ -48,7 +48,7 @@
 - Original `results/ablation/` preserved (v3.12 data, do not use for v4 paper)
 
 ### Git
-- Commit: `881f79d`
+- Commit: `881f79d` (v4 initial); `7d1a71f` (v4.1 with post-review patches)
 
 ---
 

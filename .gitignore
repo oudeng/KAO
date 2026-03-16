@@ -42,3 +42,10 @@ logs/*
 # OS metadata
 .DS_Store
 Thumbs.db
+
+# PhysioNet-derived data (DUA: do not redistribute)
+data/eicu/*.csv
+data/mimic_iv/*.csv
+
+# Preprocessed binary data
+data/**/*.npz

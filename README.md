@@ -7,16 +7,7 @@
 
 ## Overview
 
-KAO is a strongly typed symbolic regression (SR) framework designed for
-budget-constrained settings where both wall-clock time and expression complexity
-are bounded. A univariate quadratic operator `KAO(x; a,b,c) = ax^2 + bx + c`
-serves as a typed primitive within strongly typed genetic programming, localizing
-nonlinearity while maintaining semantic validity. Combined with bi-objective
-Pareto search (NSGA-II) and automatic knee-point selection, KAO discovers
-compact, interpretable expressions without per-dataset parsimony tuning.
-
-**Paper**: *KAO: A Typed Symbolic Regression Framework for Budget-Constrained
-Interpretable Modelling* — submitted to Swarm and Evolutionary Computation (SWEVO).
+KAO is a strongly typed symbolic regression (SR) framework designed for budget-constrained settings where both wall-clock time and expression complexity are bounded. A univariate quadratic operator `KAO(x; a,b,c) = ax^2 + bx + c` serves as a typed primitive within strongly typed genetic programming, localizing nonlinearity while maintaining semantic validity. Combined with bi-objective Pareto search (NSGA-II) and automatic knee-point selection, KAO discovers compact, interpretable expressions without per-dataset parsimony tuning.
 
 ## Key Features
 
@@ -386,7 +377,7 @@ If you use KAO in your research, please cite:
   title   = {KAO: Budget-Reachable Symbolic Regression via Typed Quadratic
              Operators and Knee-Point Selection},
   author  = {Deng, Ou and Nishimura, Shoji and Ogihara, Atsushi and Jin, Qun},
-  journal = {Swarm and Evolutionary Computation},
+  journal = {TBD},
   year    = {2026},
   note    = {Under review}
 }
