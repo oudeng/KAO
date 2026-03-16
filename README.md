@@ -109,8 +109,8 @@ KAO/
 │   └── {dataset}_{method}_{budget}.json # Per-dataset/method overrides
 │
 ├── data/                         # Datasets and extraction scripts
-│   ├── mimic_iv/                # MIMIC-IV ICU (2939 x 20, credentialed)
-│   ├── eicu/                    # eICU ICU (4536 x 9, credentialed)
+│   ├── ~~mimic_iv/                # MIMIC-IV ICU (2939 x 20, credentialed) ~~
+│   ├── ~~eicu/                    # eICU ICU (4536 x 9, credentialed)~~
 │   ├── nhanes/                  # NHANES metabolic (2281 x 11, public)
 │   ├── uci/                     # UCI benchmarks (4 CSVs, public)
 │   ├── srbench_synthetic/       # SRBench benchmark generator
